@@ -5,7 +5,7 @@
 ```
 
 module "db" {
-source = "./class7"
+source = "Ahmeddevops-Github/rds-cluster/aws"
 region = "us-east-2"
 subnet_ids = [
 "subnet-0764b3812f98463f4", 
@@ -23,7 +23,9 @@ instance_class = "db.t2.micro"
 username = "foo"
 password = "foobarbaz"
 publicly_accessible = true
+allocated_storage = "20"
 }
+
 
 
 
