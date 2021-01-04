@@ -1,5 +1,4 @@
 
-
 ## Terraform module for RDS Cluster ##
 
 
@@ -14,15 +13,16 @@ subnet_ids = [
 ]
 security_group_name = "db"
 allowed_hosts = [
-"0.0.0.0/0",
+"0.0.0.0/0"
 ]
-db_name             = "dbname"
-engine              = "aurora"
-engine_version      = "5.6.10a"
-instance_class      = "db.t2.micro"
-username            = "foo"
-password            = "foobarbaz"
+db_name = "dbname"
+engine = "aurora"
+engine_version = "5.6.10a"
+instance_class = "db.t2.micro"
+username = "foo"
+password = "foobarbaz"
 publicly_accessible = true
+allocated_storage = "20"
 }
 
 
@@ -32,7 +32,7 @@ value = "${module.db.region}"
 output "subnet_list" {
 value = "${module.db.subnet_list}"
 }
-output "allowed_hosts" {
+output "allows_hosts" {
 value = "${module.db.allowed_hosts}"
 }
 output "DB_NAME" {
@@ -40,3 +40,12 @@ value = "${module.db.DB_NAME}"
 }
 
 ```
+
+
+## Run ##
+```
+terraform init 
+terraform apply
+```
+
+## Ahmed DevOps ##
